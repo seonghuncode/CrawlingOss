@@ -20,10 +20,18 @@ public class CrawlingTest {
     private final CrawlingTestService crawlingTestService;
 
 
+    //네이버 주식가격 크롤링 테스트
     @GetMapping("/kospi/all")
     public List<KospiStockDto> getKosPiStockList(HttpServletRequest request){
         return crawlingTestService.getKosPiStockList();
     }
+
+
+    @GetMapping("/getOssByGitHub")
+    public List<KospiStockDto> getOssByGitHub(HttpServletRequest request){
+        return crawlingTestService.getKosPiStockList();
+    }
+
 
 
 }

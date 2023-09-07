@@ -11,10 +11,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CrawlingTestService {
 
-    private final JsoupComponent jsoupComponet;
+    private final JsoupComponent jsoupComponent;
 
+    //네이버 주식 가격 크롤링 테스트
     public List<KospiStockDto> getKosPiStockList(){
-        return jsoupComponet.getKosPiStockList();
+        return jsoupComponent.getKosPiStockList();
     }
 
 }

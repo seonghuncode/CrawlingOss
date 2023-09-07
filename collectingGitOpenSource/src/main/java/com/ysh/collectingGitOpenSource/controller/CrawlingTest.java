@@ -1,6 +1,7 @@
 package com.ysh.collectingGitOpenSource.controller;
 
 
+import com.ysh.collectingGitOpenSource.dto.GitOssDataDto;
 import com.ysh.collectingGitOpenSource.dto.KospiStockDto;
 import com.ysh.collectingGitOpenSource.service.CrawlingTestService;
 
@@ -26,11 +27,19 @@ public class CrawlingTest {
         return crawlingTestService.getKosPiStockList();
     }
 
-
+    //깃 허브에서 Oss정보 크롤링 테스트
     @GetMapping("/getOssByGitHub")
-    public List<KospiStockDto> getOssByGitHub(HttpServletRequest request){
-        return crawlingTestService.getKosPiStockList();
+    public List<GitOssDataDto> getOssByGitHub(HttpServletRequest request){
+        return crawlingTestService.getOssByGitHub();
     }
+
+    //깃 허브에서 Repository리스트를 보여주는 페이지를 크롤링 하는 부분
+    @GetMapping("/getGitRepositoryPage")
+    public List<GitOssDataDto> getGitRepositoryPage(HttpServletRequest request){
+        return crawlingTestService.getGitRepositoryPage();
+    }
+
+
 
 
 
